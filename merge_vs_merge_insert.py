@@ -13,7 +13,7 @@ if __name__ == '__main__':
     for run_it in range(25):
         print("Iteration : ", run_it)
         array_size = 500000
-        while array_size < 2000000:
+        while array_size <= 2000000:
             randomized_array = generate_random_array(array_size)
 
             run_id = str(uuid.uuid4()).split()[0]
