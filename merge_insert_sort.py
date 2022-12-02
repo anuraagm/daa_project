@@ -14,7 +14,7 @@ def merge_insert(array, low, mid, high):
     :return:
     """
     try:
-        if array[low:high+1].size > 22:
+        if array[low:high+1].size > 25:
             i = low
             j = mid + 1
             aux = []
