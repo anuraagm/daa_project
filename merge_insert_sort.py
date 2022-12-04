@@ -15,7 +15,7 @@ def merge_insert(array, low, mid, high):
     :return:
     """
     try:
-        if array[low:high+1].size > 10:
+        if array[low:high+1].size > 15:
             i = low
             j = mid + 1
             aux = []
@@ -73,8 +73,8 @@ if __name__ == "__main__":
         run_metrics = list(run_metrics)
         run_metrics.append(str(uuid.uuid4()))
         run_metrics.append(it)
-        array_size = 500000
-        while array_size <= 2000000:
+        array_size = 5
+        while array_size <= 200:
             randomized_array = generate_random_array(array_size)
             input_write_path = './io/merge_insert_sort/'+(str(array_size)+"_input_"+str(it)+".txt")
             with open(input_write_path,'w') as f:
