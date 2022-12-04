@@ -46,7 +46,7 @@ def quick_insert_sort(array, low, high, pivot_count):
     try:
         if low < high:
             pivot_count += 1
-            if pivot_count >= 0.0122 * array.size:
+            if pivot_count >= 0.0142 * array.size:
                 # print("PC : ",pivot_count)
                 insertion_sort(array[low:high+1])
             else:
