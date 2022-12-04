@@ -1,5 +1,6 @@
 import math
 from util import generate_random_array
+from insertion_sort import insertion_sort
 from time import monotonic
 import uuid
 
@@ -14,7 +15,7 @@ def merge_insert(array, low, mid, high):
     :return:
     """
     try:
-        if array[low:high+1].size > 25:
+        if array[low:high+1].size > 10:
             i = low
             j = mid + 1
             aux = []
@@ -38,13 +39,7 @@ def merge_insert(array, low, mid, high):
                 it_arr += 1
                 it_aux += 1
         else:
-            for i in range(1, len(array[low:high+1])):
-                if array[i] >= array[i - 1]:
-                    continue
-                for j in range(i):
-                    if array[i] < array[j]:
-                        array[j], array[j + 1:i + 1] = array[i], array[j:i]
-                        break
+            insertion_sort(array[low:high+1])
     except Exception as e:
         print("Error in merge() function : ", e)
         return
