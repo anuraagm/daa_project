@@ -13,8 +13,8 @@ if __name__ == '__main__':
     quick_insert_sort_result = {}
     for run_it in range(25):
         print("Iteration : ", run_it)
-        array_size = 50000
-        while array_size <= 200000:
+        array_size = 100000
+        while array_size <= 300000:
             randomized_array = generate_random_array(array_size)
 
             run_id = str(uuid.uuid4()).split()[0]
@@ -26,7 +26,7 @@ if __name__ == '__main__':
             quick_sort_time = end - start
             quick_sort_time_array.append(quick_sort_time)
             mean_quick_sort_time = sum(quick_sort_time_array) / len(quick_sort_time_array)
-            print("QS time : ", mean_quick_sort_time)
+            # print("QS time : ", mean_quick_sort_time)
 
             if array_size not in quick_sort_result.keys():
                 quick_sort_result[array_size] = mean_quick_sort_time
@@ -35,12 +35,12 @@ if __name__ == '__main__':
 
             quick_insert_sort_time_array = []
             start = monotonic()
-            quick_insert_sort(randomized_array, 0, randomized_array.size-1, 0)
+            quick_insert_sort(randomized_array, 0, randomized_array.size-1, 1)
             end = monotonic()
             quick_insert_sort_time = end - start
             quick_insert_sort_time_array.append(quick_insert_sort_time)
             mean_quick_insert_sort_time = sum(quick_insert_sort_time_array) / len(quick_insert_sort_time_array)
-            print("QIS time : ", mean_quick_insert_sort_time)
+            # print("QIS time : ", mean_quick_insert_sort_time)
 
             if array_size not in quick_insert_sort_result.keys():
                 quick_insert_sort_result[array_size] = mean_quick_insert_sort_time

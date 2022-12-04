@@ -100,14 +100,14 @@ if __name__ == '__main__':
     threshold_distribution = []
     for it in range(100):
         print("Iteration : ",it)
-        start_size = 50000
+        start_size = 2500
         threshold_point = {}
         while start_size >= 2:
             threshold_point[start_size] = 0
             randomized_array = generate_random_array(start_size)
             check_nearly_sorted(randomized_array)
             quick_sort(randomized_array, 0, randomized_array.size-1, 0, threshold_point)
-            start_size -= 10000
+            start_size -= 10
 
         threshold_list = [v for k, v in threshold_point.items()]
         l = np.array(threshold_list)
