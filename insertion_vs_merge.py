@@ -12,7 +12,7 @@ if __name__ == '__main__':
     merge_sort_result = {}
     max_num = 1
     max_start = 1
-    for run_it in range(1000):
+    for run_it in range(100000):
         print("Iteration : ", run_it)
         breakpoint_size = max_start
         array_size = max_start
@@ -57,11 +57,11 @@ if __name__ == '__main__':
             array_size += 1
 
         if check_flag > 1:
-            print("Insertion sort performs better than Merge sort until the array size is : ", breakpoint_size)
+            # print("Insertion sort performs better than Merge sort until the array size is : ", breakpoint_size)
             run_result.append(breakpoint_size)
     if len(run_result) > 0:
         avg_array_size = sum(run_result) / len(run_result)
-        print("Average number of elements, where insertion sort beats merge sort : ", avg_array_size)
+        # print("Average number of elements, where insertion sort beats merge sort : ", avg_array_size)
 
     insertion_sort_write_path = './io/insertion_sort/comparison1_output.txt'
     merge_sort_write_path = './io/merge_sort/comparison1_output.txt'
